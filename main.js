@@ -97,6 +97,7 @@ document.addEventListener("keydown", (event) => {
       audioPlayer.currentTime = Math.max(
         audioPlayer.currentTime - 10, 0
       )
+      break;
   }
 });
 
