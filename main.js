@@ -67,6 +67,7 @@ audioPlayer.addEventListener("timeupdate", () => {
   audioPlayer.playbackRate += 0.01;
 });
 
+
 document.getElementById("custom-progress").addEventListener("click", (e) => {
   const rect = e.currentTarget.getBoundingClientRect();
   const clickX = e.clientX - rect.left;
@@ -85,6 +86,17 @@ document.addEventListener("keydown", (event) => {
     case "m":
       audioPlayer.muted = !audioPlayer.muted;
       break;
+
+    case "arrowright":
+      audioPlayer.currentTime = Math.min(
+        audioPlayer.currentTime + 10,
+        audioPlayer.duration)
+      break;
+
+    case "arrowleft":
+      audioPlayer.currentTime = Math.max(
+        audioPlayer.currentTime - 10, 0
+      )
   }
 });
 
